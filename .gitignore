@@ -32,4 +32,7 @@ Temporary Items
 .sass-cache/
 *.css.map
 
+### Node Modules ###
+node_modules
+
 # End of https://www.gitignore.io/api/osx,sass
