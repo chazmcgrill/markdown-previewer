@@ -10,7 +10,6 @@ class InputBox extends Component {
   render() {
     return (
       <textarea
-        // value={this.state.message}
         onChange={event => this.setState({message: event.target.value})}
       />
     );

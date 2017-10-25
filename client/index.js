@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import InputBox from './components/input_box.jsx';
+import OutputBox from './components/output_box.jsx';
 
 class App extends Component {
 
@@ -13,7 +14,7 @@ class App extends Component {
             <InputBox />
           </div>
           <div>
-            <div className="output"></div>
+            <OutputBox />
           </div>
         </div>
       </div>
