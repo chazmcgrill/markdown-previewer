@@ -5,15 +5,25 @@ import OutputBox from './components/output_box.jsx';
 
 class App extends Component {
 
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      message: 'output goes here'
+    }
+  }
+
+  // covert sent back message
+
   render() {
     return (
       <div>
         <div className="container">
           <div className="box input-box">
-            <InputBox />
+            <InputBox inputText={message}/>
           </div>
           <div className="box output-box">
-            <OutputBox />
+            <OutputBox outputText={this.state.message} />
           </div>
         </div>
       </div>

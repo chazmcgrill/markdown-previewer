@@ -1,11 +1,10 @@
 import React, {Component} from 'react';
 
-class OutputBox extends Component {
-  render () {
-    return (
-      <div className="output-data">Sample Text</div>
-    )
-  }
-}
+const OutputBox = (props) => {
+  console.log(props);
+  return (
+    <p>{props.outputText}</p>
+  );
+};
 
 export default OutputBox;
