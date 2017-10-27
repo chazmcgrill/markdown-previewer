@@ -9,11 +9,11 @@ class App extends Component {
     super(props);
 
     this.state = {
-      text: 'output goes here'
+      text: '',
+      defaultString: "Main Heading\n=====\nSmaller Heading\n-----\n### Even Smaller Heading\nParagraph number one.\n\nParagraph number two.  \nwith a line break\n\nBulleted list:\n* *italic*\n* **bold**\n* `monospace`\n* ~~strikethrough~~\n\nNumbered list:\n1. coding\n2. more coding\n3. even more coding\n\n*[My Website](http://www.charlietaylordev.com)*"
     }
   }
 
-  // covert sent back text
   handleInput(input) {
     this.setState({"text": input});
   }
@@ -23,10 +23,16 @@ class App extends Component {
       <div>
         <div className="container">
           <div className="box input-box">
-            <InputBox inputText={this.handleInput.bind(this)}/>
+            <InputBox
+              inputText={this.handleInput.bind(this)}
+              defaultInput={this.state.defaultString}
+            />
           </div>
           <div className="box output-box">
-            <OutputBox output={this.state.text} />
+            <OutputBox
+              output={this.state.text}
+              defaultOutput={this.state.defaultString}
+            />
           </div>
         </div>
       </div>
