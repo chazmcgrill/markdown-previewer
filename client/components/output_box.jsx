@@ -1,5 +1,8 @@
 import React, {Component} from 'react';
 import marked from 'marked';
+marked.setOptions({
+  sanitize: true
+});
 
 class OutputBox extends Component {
   constructor(props) {
@@ -10,15 +13,17 @@ class OutputBox extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    var converted = marked(nextProps.output);
-    this.setState({ outputText: converted});
+    this.setState({ outputText: nextProps.output});
+  }
+
+  converter() {
+    var converted = marked(this.state.outputText);
+    return { __html: converted};
   }
 
   render() {
     return (
-      <div>        
-        {this.state.outputText}
-      </div>
+      <div dangerouslySetInnerHTML={this.converter()} />
     );
   }
 }
