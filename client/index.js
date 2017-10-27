@@ -9,21 +9,24 @@ class App extends Component {
     super(props);
 
     this.state = {
-      message: 'output goes here'
+      text: 'output goes here'
     }
   }
 
-  // covert sent back message
+  // covert sent back text
+  handleInput(input) {
+    this.setState({"text": input});
+  }
 
   render() {
     return (
       <div>
         <div className="container">
           <div className="box input-box">
-            <InputBox inputText={message}/>
+            <InputBox inputText={this.handleInput.bind(this)}/>
           </div>
           <div className="box output-box">
-            <OutputBox outputText={this.state.message} />
+            <OutputBox output={this.state.text} />
           </div>
         </div>
       </div>

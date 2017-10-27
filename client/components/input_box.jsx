@@ -1,23 +1,20 @@
 import React, { Component } from 'react';
 
 class InputBox extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { text: '' };
+
+  inputChange(event) {
+    this.props.inputText(event.target.value);
   }
 
   render() {
     return (
       <textarea
-        onChange={event => this.inputChange(event.target.value)}
+        onChange={this.inputChange.bind(this)}
+        placeholder="Insert text here"
       />
     );
   }
 
-  inputChange(text) {
-    this.setState({text});
-    this.props.inputText(text);
-  }
 }
 
 export default InputBox;
