@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import marked from 'marked';
 
 class OutputBox extends Component {
   constructor(props) {
@@ -9,12 +10,15 @@ class OutputBox extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    this.setState({ outputText: nextProps.output})
+    var converted = marked(nextProps.output);
+    this.setState({ outputText: converted});
   }
 
   render() {
     return (
-      <p>{this.state.outputText}</p>
+      <div>        
+        {this.state.outputText}
+      </div>
     );
   }
 }
