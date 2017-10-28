@@ -20,20 +20,18 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-        <div className="container">
-          <div className="box input-box">
-            <InputBox
-              inputText={this.handleInput.bind(this)}
-              defaultInput={this.state.defaultString}
-            />
-          </div>
-          <div className="box output-box">
-            <OutputBox
-              output={this.state.text}
-              defaultOutput={this.state.defaultString}
-            />
-          </div>
+      <div className="container">
+        <div className="box input-box">
+          <InputBox
+            inputText={this.handleInput.bind(this)}
+            defaultInput={this.state.defaultString}
+          />
+        </div>
+        <div className="box output-box">
+          <OutputBox
+            output={this.state.text}
+            defaultOutput={this.state.defaultString}
+          />
         </div>
       </div>
     )

@@ -24,7 +24,7 @@ class OutputBox extends Component {
 
   render() {
     return (
-      <div dangerouslySetInnerHTML={this.converter()} />
+      <div className="output" dangerouslySetInnerHTML={this.converter()} />
     );
   }
 }
